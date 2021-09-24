@@ -1,7 +1,7 @@
 # Applicant Project
 
 This project was generated on a time-boxed basis. I set myself a time budget of `4 hours`.
-The project uses `strict` and `noImplicitAny`. There are also a few adjustments in `angular.json`
+The project uses `strict` and `noImplicitAny`. There are also a few adjustments in `package.json`
 and `angular.json` to improve dev experience, dev speed and prevent dev-tools to show in production.
 
 ## State management
