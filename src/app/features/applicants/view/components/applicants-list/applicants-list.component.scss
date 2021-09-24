@@ -1,0 +1,11 @@
+.skill-list {
+  margin-bottom: 2rem;
+  &__actions {
+    display: grid;
+    justify-content: center;
+  }
+
+  &__content {
+    padding-left: 1rem;
+  }
+}

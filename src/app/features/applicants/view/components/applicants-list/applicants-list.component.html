@@ -1,0 +1,21 @@
+<mat-card class="skill-list mat-elevation-z10" *ngFor="let applicant of allApplicants">
+
+  <mat-card-header>
+
+    <mat-card-title>{{applicant.name}}</mat-card-title>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="skill-list__content">Skills: {{ applicant.skills }}</p>
+  </mat-card-content>
+
+  <mat-card-actions class="skill-list__actions">
+
+    <button mat-mini-fab color="warn">
+      <mat-icon class="skill-list_delete" (click)="deleteApplicant.emit(applicant)">delete</mat-icon>
+    </button>
+
+  </mat-card-actions>
+
+</mat-card>

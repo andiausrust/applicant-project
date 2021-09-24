@@ -1,0 +1,4 @@
+<app-create-applicant (addApplicant)="applicantsFacade.addApplicant($event)"></app-create-applicant>
+
+<app-applicants-list [allApplicants]="(applicantsFacade.applicants$ | async) || []"
+                     (deleteApplicant)="applicantsFacade.deleteApplicant($event)"></app-applicants-list>
