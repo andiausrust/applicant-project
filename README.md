@@ -42,5 +42,6 @@ The rest of the components are dumb and have only input and outputs.
 That structure allows me to always have a clear separation of view, server communication and 
 state management.
 
-`Jest tests` run jest test with `npm run test`.
-'Cypress test` run cypress tests with `npm run cypress:run` (headless) or `npm run cypress:open` (browser).
+`Jest tests`: run jest test with `npm run test`.
+
+'Cypress test`: run cypress tests with `npm run cypress:run` (headless) or `npm run cypress:open` (browser).
