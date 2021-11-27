@@ -11,8 +11,6 @@ import { TodosFacade } from '../../../@store/todos.facade';
 })
 export class CreateTodoComponent implements OnInit {
 
-  @Output() addTodo: EventEmitter<any> = new EventEmitter<any>();
-
   todoForm: FormGroup = this.fb.group({
     description: [ '', Validators.required ],
     dueDate: [ new Date(), Validators.required ]

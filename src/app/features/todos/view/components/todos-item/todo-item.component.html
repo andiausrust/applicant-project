@@ -5,10 +5,12 @@
             [todoStatus]="todo.status"
             data-testId="todo__item"
   >
-    {{ todo.status === "open" ? '🤦‍♀' : '🎉' }} {{todo.description}} || due: {{ todo.dueDate |
-    date:'dd.MM.yyyy' }}
-
-    <button matChipRemove (click)="deleteTodo.emit(todo)" data-testId="todo__item-remove">
+    {{ todo.status === "open" ? '🤦‍♀' : '🎉' }} {{todo.description}} ||
+    due: {{ todo.dueDate | date:'dd.MM.yyyy' }}
+    <button matChipRemove
+            (click)="deleteTodo.emit(todo)"
+            data-testId="todo__item-remove"
+    >
       <mat-icon>cancel</mat-icon>
     </button>
   </mat-chip>

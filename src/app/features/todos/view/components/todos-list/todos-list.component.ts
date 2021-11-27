@@ -35,7 +35,7 @@ export class TodosListComponent implements OnInit {
     this.todosFacade.deleteTodo(todo);
   }
 
-  onCompleted(event: { id: string; status: "open" | "completed" }): void {
+  onStatusChanged(event: { id: string; status: "open" | "completed" }): void {
     this.todosFacade.updateStatus(event.id, { status: event.status });
   }
 }
