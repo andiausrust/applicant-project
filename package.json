@@ -1,5 +1,5 @@
 {
-  "name": "applicant-project",
+  "name": "applicantProject",
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
@@ -7,10 +7,31 @@
     "prebuild:major": "npm --no-git-tag-version version major",
     "prebuild:minor": "npm --no-git-tag-version version minor",
     "prebuild:patch": "npm --no-git-tag-version version patch",
-    "local:prod:dev": "ionic build --prod && http-server www/",
+    "local:prod": "rimraf dist && ng build && http-server dist/applicantProject/ -o",
+    "local:serve": "ng serve --configuration production",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/cypress/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$"
+      }
+    }
   },
   "private": true,
   "dependencies": {
@@ -31,23 +52,24 @@
     "@ngrx/store": "^12.4.0",
     "@ngrx/store-devtools": "^12.4.0",
     "firebase": "^9.0.2",
+    "rimraf": "^3.0.2",
     "rxjs": "~6.6.0",
+    "ts-node": "^10.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^13.0.0",
     "@angular-devkit/build-angular": "~12.2.6",
     "@angular/cli": "~12.2.6",
     "@angular/compiler-cli": "~12.2.0",
+    "@cypress/schematic": "^1.6.0",
     "@ngrx/schematics": "^12.4.0",
-    "@types/jasmine": "~3.8.0",
+    "@types/jest": "^27.0.3",
     "@types/node": "^12.11.1",
-    "jasmine-core": "~3.8.0",
-    "karma": "~6.3.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0",
+    "cypress": "latest",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
     "typescript": "~4.3.5"
   }
 }

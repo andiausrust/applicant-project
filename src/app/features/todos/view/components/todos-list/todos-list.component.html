@@ -1,0 +1,9 @@
+<app-todo-item [todos]="(todos$ | async) || []"
+               (deleteTodo)="onDeleteTodo($event)"
+               (completed)="onCompleted($event)"
+>
+</app-todo-item>
+
+<button mat-fab color="success" class="add-button" (click)="onCreateTodo()" data-testId="todo-list__create-button">
+  <mat-icon>add</mat-icon>
+</button>

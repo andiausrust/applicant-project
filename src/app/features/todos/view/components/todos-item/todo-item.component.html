@@ -1,0 +1,16 @@
+<mat-chip-list class="todos__container">
+
+  <mat-chip *ngFor="let todo of todos"
+            (click)="onCompleted(todo)"
+            [todoStatus]="todo.status"
+            data-testId="todo__item"
+  >
+    {{ todo.status === "open" ? '🤦‍♀' : '🎉' }} {{todo.description}} || due: {{ todo.dueDate |
+    date:'dd.MM.yyyy' }}
+
+    <button matChipRemove (click)="deleteTodo.emit(todo)" data-testId="todo__item-remove">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-chip>
+
+</mat-chip-list>

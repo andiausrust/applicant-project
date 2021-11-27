@@ -52,4 +52,5 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatStepperModule,
   ]
 })
-export class MaterialModule {}
+export class MaterialModule {
+}

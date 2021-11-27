@@ -8,16 +8,15 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
-import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { environment } from '../environments/environment';
-import { MaterialModule } from './material-module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import { reducers } from './libs/@global-store';
-import { CustomSerializer } from './libs/@global-store/routing/custom-route-serializers';
+import { CreateTodoComponent } from './features/todos/view/components/create-todos/create-todo.component';
+import { reducers } from './index';
 import { extModules } from './libs/build-specifics';
+import { MaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
@@ -29,11 +28,6 @@ import { extModules } from './libs/build-specifics';
     StoreModule.forRoot(reducers),
     extModules,
     EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot({
-        serializer: CustomSerializer,
-        routerState: RouterState.Minimal
-      }
-    ),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
@@ -41,9 +35,10 @@ import { extModules } from './libs/build-specifics';
     AngularFireStorageModule,
     AngularFireAuthGuardModule,
     MaterialModule,
-    StoreRouterConnectingModule.forRoot()
   ],
+  entryComponents: [ CreateTodoComponent ],
   providers: [],
   bootstrap: [ AppComponent ]
 })
-export class AppModule {}
+export class AppModule {
+}

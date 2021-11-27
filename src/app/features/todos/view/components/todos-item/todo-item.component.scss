@@ -1,0 +1,23 @@
+.mat-chip.mat-standard-chip {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: lighter;
+  padding: 0.7rem;
+  height: auto;
+}
+
+::ng-deep mat-chip-list .mat-chip-list-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: stretch;
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}

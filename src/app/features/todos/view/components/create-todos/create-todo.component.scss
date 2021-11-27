@@ -1,0 +1,31 @@
+.add-todo {
+  &__header {
+    font-size: 1.25em;
+    font-weight: 500;
+  }
+
+  &__inputs {
+    margin-top: 2rem;
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__cancel {
+    color: red;
+  }
+
+  &__accept {
+    color: green;
+    font-weight: bold;
+  }
+}
+
+::ng-deep .mat-dialog-content {
+  overflow-y: hidden !important;
+}
