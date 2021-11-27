@@ -21,13 +21,13 @@ The project is available at [Git](https://github.com/andiausrust/applicant-proje
 I adhere to following principles when writing Angular or Ionic applications:
 
 ```
-- Features: the routing table should describe the features.
-- Components should only do two things: consume data and capture events. Data is only
+- Features: the routing table describes the features.
+- Components do only do two things: consume data and capture events. Data is only
   consumed via async pipes or via inputs. Components should be oblivious to state management and server
   communication. I always use on push change detection in my application (spares a lot of head ache).
-- Facades are used as an effective delegation layer between components & the rest of the app.
-- Server Communication and State Management should also be decoupled.
-- Optimization should only be done when there is a good reason for it.
+- I use facades as an effective delegation layer between components & the rest of the app.
+- Server Communication and State Management are also decoupled.
+- Optimization is only be done when there is a good reason for it.
 - Composition is always prefered to Inheritance.
 ```
 
@@ -35,8 +35,8 @@ I adhere to following principles when writing Angular or Ionic applications:
 I usually divide my applications in two main areas: `features and libs`.
 
 `Features` should mirror the routing table. E.g. login, todos, ... Each feature has its own 
- - store (state management), communicates with components via facade and with server via effects
- - domain (server communication), is a service class that provides access to the backend and should only provide data
+ - store (state management), communicates with components via facade
+ - a service class provides access to the backend and is called in effects - thus state management is oblivious to server side logic
  - view. The main component in the view is a smart component as it has dependencies (optimal would be to have only the facade injected).
 The rest of the components are dumb and have only input and outputs.
 That structure allows me to always have a clear separation of view, server communication and 
