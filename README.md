@@ -11,8 +11,7 @@ State management was implemented via NgRx entity. Async code is dealt with in ef
 A firebase backend was implemented to better show how I usually deal with server communication.
 
 ## Deployment
-The app is deployed to Firebase hosting and is available at: [todo](https://fir-12dc8.web.app
-)
+The app is deployed to Firebase hosting and is available at: [todo](https://fir-12dc8.web.app)
 
 ## Github
 The project is available at [Git](https://github.com/andiausrust/applicant-project)
